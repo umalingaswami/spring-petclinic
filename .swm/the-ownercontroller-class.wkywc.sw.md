@@ -266,63 +266,8 @@ The function <SwmToken path="src/main/java/org/springframework/samples/petclinic
 
 # Usage
 
-<SwmSnippet path="/src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java" line="46">
-
----
-
-The <SwmToken path="src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java" pos="47:2:2" line-data="class OwnerController {">`OwnerController`</SwmToken> class is utilized to manage operations related to pet owners within the application. It acts as a bridge between the user interface and the data repository, handling requests and responses for owner-related actions.
-
-```java
-@Controller
-class OwnerController {
-
-	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
-
-	private final OwnerRepository owners;
-
-	public OwnerController(OwnerRepository owners) {
-		this.owners = owners;
-	}
-```
-
----
-
-</SwmSnippet>
-
-<SwmSnippet path="/src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java" line="49">
-
----
-
-The <SwmToken path="src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java" pos="53:3:3" line-data="	public OwnerController(OwnerRepository owners) {">`OwnerController`</SwmToken> facilitates the creation and updating of owner information through the view <SwmToken path="src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java" pos="49:14:16" line-data="	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = &quot;owners/createOrUpdateOwnerForm&quot;;">`owners/createOrUpdateOwnerForm`</SwmToken>. This view is defined as a constant within the class, ensuring consistent access to the form used for these operations.
-
-```java
-	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
-
-```
-
----
-
-</SwmSnippet>
-
-<SwmSnippet path="/src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java" line="51">
-
----
-
-The <SwmToken path="src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java" pos="53:3:3" line-data="	public OwnerController(OwnerRepository owners) {">`OwnerController`</SwmToken> interacts with the <SwmToken path="src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java" pos="51:5:5" line-data="	private final OwnerRepository owners;">`OwnerRepository`</SwmToken> to perform CRUD operations on owner data. It is initialized with an instance of <SwmToken path="src\main\java\org\springframework\samples\petclinic\owner\OwnerController.java" pos="51:5:5" line-data="	private final OwnerRepository owners;">`OwnerRepository`</SwmToken>, allowing it to access and manipulate owner records stored in the database.
-
-```java
-	private final OwnerRepository owners;
-
-	public OwnerController(OwnerRepository owners) {
-		this.owners = owners;
-```
-
----
-
-</SwmSnippet>
-
 &nbsp;
 
 *This is an auto-generated document by Swimm 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBc3ByaW5nLXBldGNsaW5pYyUzQSUzQXVtYWxpbmdhc3dhbWk=" repo-name="spring-petclinic"><sup>Powered by [Swimm](/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBc3ByaW5nLXBldGNsaW5pYyUzQSUzQXVtYWxpbmdhc3dhbWk=" repo-name="spring-petclinic"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>
