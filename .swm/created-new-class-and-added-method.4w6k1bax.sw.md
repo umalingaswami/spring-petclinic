@@ -40,7 +40,7 @@ public class SimpleGreeting {
 
 # Implementation of greet method
 
-<SwmSnippet path="src/main/java/org/springframework/samples/petclinic/SimpleGreeting.java" line="12">
+<SwmSnippet path="/src/main/java/org/springframework/samples/petclinic/SimpleGreeting.java" line="12">
 
 ---
 
@@ -51,7 +51,11 @@ The greet method in the <SwmToken path="/src/main/java/org/springframework/sampl
         SimpleGreeting greeting = new SimpleGreeting("World");
         greeting.greet();
     }
-}
+     public int add(int a, int b){
+        int result =0;
+        result =a+b;
+        return result;
+    }
 ```
 
 ---
