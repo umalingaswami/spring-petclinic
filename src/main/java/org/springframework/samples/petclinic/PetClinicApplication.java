@@ -42,5 +42,19 @@ public class PetClinicApplication {
             new org.springframework.samples.petclinic.service.SimpleGreeting(message);
         greeting.greet();
     }
+ 
+    /**
+     * Prints the current active Spring profiles.
+     */
+    public static void printActiveProfiles() {
+        String[] profiles = org.springframework.context.annotation.AnnotationConfigApplicationContext
+            .getEnvironmentStatic().getActiveProfiles();
+        if (profiles.length == 0) {
+            System.out.println("No active Spring profiles.");
+        } else {
+            System.out.println("Active Spring profiles: " + String.join(", ", profiles));
+        }
+    }
+
 
 }
