@@ -30,14 +30,30 @@ public class Person extends BaseEntity {
 	@Column(name = "first_name")
 	@NotBlank
 	private String firstName;
+	
+	
+	@Column(name = "middle_name")
+	@NotBlank
+	private String middleName;
 
 	@Column(name = "last_name")
 	@NotBlank
 	private String lastName;
 
 	public String getFirstName() {
+		logger.info("getFirstName called");
 		return this.firstName;
 	}
+
+
+
+	public String getMiddleName() {
+		return this.middleName;
+	}
+public void setMiddleName(String firstName) {
+		this.middleName = middleName;
+	}
+
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
