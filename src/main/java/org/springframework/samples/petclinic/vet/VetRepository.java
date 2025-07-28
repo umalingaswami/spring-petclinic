@@ -54,5 +54,14 @@ public interface VetRepository extends Repository<Vet, Integer> {
 	@Transactional(readOnly = true)
 	@Cacheable("vets")
 	Page<Vet> findAll(Pageable pageable) throws DataAccessException;
+	
+	/**
+	 * Find a vet by last name.
+	 * @param lastName the last name to search for
+	 * @return a collection of vets with the given last name
+	 */
+	@Transactional(readOnly = true)
+	Collection<Vet> findByLastName(String lastName) throws DataAccessException;
+
 
 }
