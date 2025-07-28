@@ -32,5 +32,15 @@ public class PetClinicApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
+	
+
+    /**
+     * Calls the SimpleGreeting class to print a greeting message.
+     */
+    public static void callSimpleGreeting(String message) {
+        org.springframework.samples.petclinic.service.SimpleGreeting greeting =
+            new org.springframework.samples.petclinic.service.SimpleGreeting(message);
+        greeting.greet();
+    }
 
 }
