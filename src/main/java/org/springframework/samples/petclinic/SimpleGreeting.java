@@ -18,4 +18,8 @@ public class SimpleGreeting {
         result =a+b;
         return result;
     }
+    public void square(int a){
+        int square =a*a;
+        System.out.println("Square is: " +square);
+    }
 }
