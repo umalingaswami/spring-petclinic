@@ -22,4 +22,7 @@ public class SimpleGreeting {
         int square =a*a;
         System.out.println("Square is: " +square);
     }
+    returnType add(){
+        
+    }
 }
