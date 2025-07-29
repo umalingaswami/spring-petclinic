@@ -183,7 +183,7 @@ The function <SwmToken path="src/main/java/org/springframework/samples/petclinic
 
 ```java
 	private Page<Owner> findPaginatedForOwnersLastName(int page, String lastname) {
-		int pageSize = 5;
+		int pageSize = 6;
 		Pageable pageable = PageRequest.of(page - 1, pageSize);
 		return owners.findByLastNameStartingWith(lastname, pageable);
 	}
