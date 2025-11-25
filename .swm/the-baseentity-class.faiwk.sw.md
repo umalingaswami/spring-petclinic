@@ -1,0 +1,95 @@
+---
+title: The BaseEntity class
+---
+This document will cover the class <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken>. We will explain:
+
+1. What <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken> is and its purpose.
+2. The variables and functions defined in <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken>, including detailed explanations of <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="39:5:5" line-data="	public Integer getId() {">`getId`</SwmToken>, <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="43:5:5" line-data="	public void setId(Integer id) {">`setId`</SwmToken>, and <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="47:5:5" line-data="	public boolean isNew() {">`isNew`</SwmToken> methods.
+
+# What is <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken>
+
+<SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken> is a simple <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="26:5:5" line-data=" * Simple JavaBean domain object with an id property. Used as a base class for objects">`JavaBean`</SwmToken> domain object that serves as a base class for other domain objects requiring an identifier property. It is annotated with @<SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="23:6:6" line-data="import jakarta.persistence.MappedSuperclass;">`MappedSuperclass`</SwmToken>, indicating that it provides mapping information for its subclasses but is not itself an entity. The class implements Serializable to allow its instances to be serialized. Its primary purpose is to centralize the management of the entity identifier, which is a common requirement for persistent domain objects.
+
+<SwmSnippet path="/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" line="39">
+
+---
+
+The function <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="39:5:5" line-data="	public Integer getId() {">`getId`</SwmToken> returns the identifier of the entity. It provides access to the private id field, which uniquely identifies the entity instance.
+
+```java
+	public Integer getId() {
+		return id;
+	}
+```
+
+---
+
+</SwmSnippet>
+
+<SwmSnippet path="/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" line="43">
+
+---
+
+The function <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="43:5:5" line-data="	public void setId(Integer id) {">`setId`</SwmToken> sets the identifier of the entity. It assigns the given Integer id to the private id field, allowing the entity's identifier to be updated or initialized.
+
+```java
+	public void setId(Integer id) {
+		this.id = id;
+	}
+```
+
+---
+
+</SwmSnippet>
+
+<SwmSnippet path="/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" line="47">
+
+---
+
+The function <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="47:5:5" line-data="	public boolean isNew() {">`isNew`</SwmToken> determines whether the entity is new, meaning it has not been persisted yet. It returns true if the id field is null, indicating that the entity has not been assigned a database-generated identifier.
+
+```java
+	public boolean isNew() {
+		return this.id == null;
+	}
+```
+
+---
+
+</SwmSnippet>
+
+<SwmSnippet path="/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" line="35">
+
+---
+
+The variable <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="37:5:5" line-data="	private Integer id;">`id`</SwmToken> is a private Integer field that stores the unique identifier of the entity. It is annotated with @Id to mark it as the primary key and @<SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="36:2:2" line-data="	@GeneratedValue(strategy = GenerationType.IDENTITY)">`GeneratedValue`</SwmToken> with strategy <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="36:8:10" line-data="	@GeneratedValue(strategy = GenerationType.IDENTITY)">`GenerationType.IDENTITY`</SwmToken> to indicate that its value is generated by the database upon insertion.
+
+```java
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+```
+
+---
+
+</SwmSnippet>
+
+# Usage
+
+## NamedEntity
+
+NamedEntity extends <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken> to add a name property, serving as a base class for domain objects that require both an identifier and a name.
+
+## Person
+
+Person inherits from <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken> and represents individuals with additional attributes such as first name, leveraging <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken>'s identifier.
+
+## Visit
+
+Visit is an entity class that extends <SwmToken path="src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java" pos="33:4:4" line-data="public class BaseEntity implements Serializable {">`BaseEntity`</SwmToken>, using the inherited identifier to uniquely represent a visit record with additional visit-specific fields.
+
+&nbsp;
+
+*This is an auto-generated document by Swimm 🌊 and has not yet been verified by a human*
+
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBc3ByaW5nLXBldGNsaW5pYyUzQSUzQXVtYWxpbmdhc3dhbWk=" repo-name="spring-petclinic"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>
